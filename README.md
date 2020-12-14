@@ -101,7 +101,7 @@ for entry in [f7,f6,f8]:
     print(np.max(np.abs(f5-entry)))
 ```
 
-![plot](error.png)
+![plot](https://github.com/zmy1116/tritoninferenceissues/blob/main/error.PNG)
 
 
 
