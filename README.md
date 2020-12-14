@@ -14,7 +14,7 @@ import torchvision
 
 model = torchvision.models.inception_v3(pretrained=True).cuda().half().eval()
 data = torch.randn((1, 3, 224, 224)).cuda().half()
-with open('/workspace/ubuntu/model_repository_2011/resnet18/1/model', "wb") as f:
+with open('/workspace/ubuntu/model_repository_2011/inceptionv3/1/model', "wb") as f:
     f.write(model_trt.engine.serialize())
 ```
 
@@ -66,14 +66,14 @@ We run both model `resnet18` and `inceptionv3` multiple times simultanously so t
 
 The folllowing commands do the aboves, and save resnet18 results in outputs1-4, and save the inceptionv3 results5-8 
 ```buildoutcfg
-nohup python /home/ubuntu/tritonissues/triton_inference.py resnet18 /home/ubuntu/trt_issues_data/testing_inputs.p 64 outputs1.p &
-nohup python /home/ubuntu/tritonissues/triton_inference.py inceptionv3 /home/ubuntu/trt_issues_data/testing_inputs.p 64 outputs5.p &
-nohup python /home/ubuntu/tritonissues/triton_inference.py resnet18 /home/ubuntu/trt_issues_data/testing_inputs.p 64 outputs2.p &
-nohup python /home/ubuntu/tritonissues/triton_inference.py inceptionv3 /home/ubuntu/trt_issues_data/testing_inputs.p 64 outputs6.p &
-nohup python /home/ubuntu/tritonissues/triton_inference.py resnet18 /home/ubuntu/trt_issues_data/testing_inputs.p 64 outputs3.p &
-nohup python /home/ubuntu/tritonissues/triton_inference.py inceptionv3 /home/ubuntu/trt_issues_data/testing_inputs.p 64 outputs7.p &
-nohup python /home/ubuntu/tritonissues/triton_inference.py resnet18 /home/ubuntu/trt_issues_data/testing_inputs.p 64 outputs4.p &
-nohup python /home/ubuntu/tritonissues/triton_inference.py inceptionv3 /home/ubuntu/trt_issues_data/testing_inputs.p 64 outputs8.p &
+nohup python /home/ubuntu/tritoninferenceissues/triton_inference.py resnet18 /home/ubuntu/trt_issues_data/testing_inputs.p 64 outputs1.p &
+nohup python /home/ubuntu/tritoninferenceissues/triton_inference.py inceptionv3 /home/ubuntu/trt_issues_data/testing_inputs.p 64 outputs5.p &
+nohup python /home/ubuntu/tritoninferenceissues/triton_inference.py resnet18 /home/ubuntu/trt_issues_data/testing_inputs.p 64 outputs2.p &
+nohup python /home/ubuntu/tritoninferenceissues/triton_inference.py inceptionv3 /home/ubuntu/trt_issues_data/testing_inputs.p 64 outputs6.p &
+nohup python /home/ubuntu/tritoninferenceissues/triton_inference.py resnet18 /home/ubuntu/trt_issues_data/testing_inputs.p 64 outputs3.p &
+nohup python /home/ubuntu/tritoninferenceissues/triton_inference.py inceptionv3 /home/ubuntu/trt_issues_data/testing_inputs.p 64 outputs7.p &
+nohup python /home/ubuntu/tritoninferenceissues/triton_inference.py resnet18 /home/ubuntu/trt_issues_data/testing_inputs.p 64 outputs4.p &
+nohup python /home/ubuntu/tritoninferenceissues/triton_inference.py inceptionv3 /home/ubuntu/trt_issues_data/testing_inputs.p 64 outputs8.p &
 ```
 
 
